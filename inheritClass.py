@@ -1,6 +1,5 @@
 class royalEnfield:
     bikeName = 'baseName'
-    bikeColor = 'BaseColor'
     bikeVarients= [
         {
         'model': 'classic350',
@@ -33,19 +32,18 @@ class royalEnfield:
         'varient': 'dualTone'
         }
     ]
+    bikeSelectedVarient = []
 
-
-    def __init__(self,name = '',color = '', varients =[]):
+    def __init__(self,name = '', model= ''):
         if name != '':
             self.bikeName = name
-        if len(varients) != 0:
-            self.bikeVarients = varients
-        if color != '':
-            self.bikeColor = color
+        if model != '':
+            for bike in  self.bikeVarients:
+                if bike['model'] == model:
+                    self.bikeSelectedVarient.append(bike)
         
         print(f'bike name is {self.bikeName}')
-        print(f'bike color is {self.bikeColor}')
-        print(f'bike varients are  {self.bikeVarients}')
+        print(f'bike varients are  {self.bikeSelectedVarient}')
     
 
-classic350 = royalEnfield(name="classic 350", color='black', varients=[{}])
+classic350 = royalEnfield(name="classic 350", model='classic350')
