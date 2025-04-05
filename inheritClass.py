@@ -35,6 +35,7 @@ class royalEnfield:
     bikeSelectedVarient = []
 
     def __init__(self,name = '', model= ''):
+        print(f'bike before varients are  {self.bikeSelectedVarient}')
         if name != '':
             self.bikeName = name
         if model != '':
@@ -43,7 +44,35 @@ class royalEnfield:
                     self.bikeSelectedVarient.append(bike)
         
         print(f'bike name is {self.bikeName}')
-        print(f'bike varients are  {self.bikeSelectedVarient}')
+        print(f'bike after varients are  {self.bikeSelectedVarient}')
     
 
-classic350 = royalEnfield(name="classic 350", model='classic350')
+
+# hunter350 = royalEnfield(name="hunter 350", model='hunter350')
+# hunter350.bikeSelectedVarient = []
+# print('-----')
+# print('-----')
+# print('-----')
+# print('-----')
+# classic350 = royalEnfield(name="classic 350", model='classic350')
+
+class classic350(royalEnfield):
+    
+    def __init__(self, name='', model=''):
+        self.bikeSelectedVarient = []
+        super().__init__(name=name,model=model)
+
+class hunter350(royalEnfield):
+    
+    def __init__(self, name='', model=''):
+        self.bikeSelectedVarient = []
+        super().__init__(name=name,model=model)
+
+
+
+cl1 = classic350(name="classic 350", model='classic350')
+print('---')
+print('---')
+print('---')
+print('---')
+ht1 = classic350(name="hunter 350", model='hunter350')
